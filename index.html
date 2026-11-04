@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The American Plan: A Five-Year Plan War Game</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 100%); color: #333; line-height: 1.6; padding: 20px; }
+        .container { max-width: 1200px; margin: 0 auto; background: white; border-radius: 12px; box-shadow: 0 10px 40px rgba(0,100,200,0.3); overflow: hidden; }
+        .header { background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); color: white; padding: 30px; text-align: center; }
+        .header h1 { font-size: 2.2em; margin-bottom: 10px; }
+        .header p { font-size: 1.1em; opacity: 0.9; }
+        .tabs { display: flex; flex-wrap: wrap; background: #f0f0f0; border-bottom: 2px solid #ddd; }
+        .tab { flex: 1; padding: 15px; text-align: center; cursor: pointer; border: none; background: none; font-size: 1em; font-weight: 600; font-family: inherit; color: #333; }
+        .tab:hover { background: #e0e0e0; }
+        .tab.active { background: white; color: #3b82f6; border-bottom: 3px solid #3b82f6; }
+        .content { padding: 30px; }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+        .danger-box { background: #f8d7da; border-left: 4px solid #dc3545; padding: 15px; margin: 20px 0; border-radius: 4px; }
+        .info-box { background: #d1ecf1; border-left: 4px solid #17a2b8; padding: 15px; margin: 20px 0; border-radius: 4px; }
+        .warning-box { background: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin: 20px 0; border-radius: 4px; }
+        .classified-box { background: #1a1a1a; color: #ff6b6b; border-left: 4px solid #ff0000; padding: 15px; margin: 20px 0; border-radius: 4px; }
+        .classified-box strong { color: #ffb3b3; }
+        .role-card { background: #f8f9fa; border: 2px solid #dee2e6; border-radius: 8px; padding: 20px; margin: 15px 0; }
+        .role-card h3 { color: #3b82f6; margin-top: 0; margin-bottom: 10px; }
+        .decision-point { background: white; border: 2px solid #6c757d; border-radius: 8px; padding: 20px; margin: 20px 0; }
+        .decision-point h3 { background: #6c757d; color: white; padding: 10px; margin: -20px -20px 15px -20px; border-radius: 6px 6px 0 0; }
+        table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+        th, td { border: 1px solid #dee2e6; padding: 8px 10px; text-align: left; vertical-align: top; }
+        th { background: #f0f0f0; }
+        .footer { background: #343a40; color: white; padding: 20px; text-align: center; }
+        h2 { color: #3b82f6; margin: 25px 0 15px 0; padding-bottom: 10px; border-bottom: 2px solid #dee2e6; }
+        h3 { color: #495057; margin: 20px 0 10px 0; }
+        p { margin: 8px 0; }
+        ul, ol { margin-left: 30px; margin-top: 10px; }
+        li { margin: 8px 0; }
+        strong { color: #495057; }
+        .classified-box strong { color: #ffb3b3; }
+        @media (max-width: 640px) {
+            body { padding: 8px; }
+            .content { padding: 18px; }
+            .header h1 { font-size: 1.6em; }
+            .tab { flex: 1 1 33%; padding: 10px; font-size: .9em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>The American Plan</h1>
+            <p>A War Game: Write a Five-Year Plan for American Science, 2027–2031</p>
+        </div>
+
+        <div class="tabs">
+            <button class="tab active" data-tab="overview">Scenario</button>
+            <button class="tab" data-tab="china">How China Plans</button>
+            <button class="tab" data-tab="rooms">Rooms &amp; Roles</button>
+            <button class="tab" data-tab="move1">Move 1</button>
+            <button class="tab" data-tab="move2">Move 2</button>
+            <button class="tab" data-tab="debrief">Debrief</button>
+        </div>
+
+        <div class="content">
+
+            <!-- ===================== SCENARIO ===================== -->
+            <div id="overview" class="tab-content active">
+                <h2>Scenario</h2>
+
+                <div class="danger-box">
+                    <strong>JANUARY 2027.</strong> China is in Year Two of its 15th Five-Year Plan. It has named its priority technologies, set its targets, and told every ministry, province, and university what is expected of them through 2030. In Washington, a bipartisan group asks an uncomfortable question: <em>Should America have one too?</em>
+                </div>
+
+                <p>You have been appointed to a <strong>National Science Planning Commission</strong>. Your job is to write the first Five-Year Plan for American Science, covering 2027 through 2031.</p>
+
+                <p>There is a catch. America was not built to do this. Congress appropriates money <strong>one year at a time</strong>. A new President can be inaugurated in January 2029, halfway through your plan. Universities, companies, and states make their own choices. And many scientists believe the best discoveries are the ones nobody planned.</p>
+
+                <div class="info-box">
+                    <strong>The whole game in one sentence:</strong> Write a plan on one page, then find out in Year 3 whether it survived contact with America.
+                </div>
+
+                <h3>The Plan Fits on One Page</h3>
+                <p>Every room fills in the same five boxes. Nothing more.</p>
+                <table>
+                    <tr><th>Box</th><th>What goes in it</th></tr>
+                    <tr><td><strong>1. The Goal</strong></td><td>One sentence. What should American science be able to do in 2031 that it cannot do today?</td></tr>
+                    <tr><td><strong>2. Three Priorities</strong></td><td>Three fields or missions, <strong>ranked</strong> 1, 2, 3. A ranking means #3 loses if money is short.</td></tr>
+                    <tr><td><strong>3. The Cut</strong></td><td>One real thing the federal government stops or shrinks to pay for the priorities. "Waste" and "fraud" are not allowed answers.</td></tr>
+                    <tr><td><strong>4. The Target</strong></td><td>One measurable number with a deadline. Example form: "X by 2031." Someone must be able to check it.</td></tr>
+                    <tr><td><strong>5. The Enforcer</strong></td><td>Who makes the plan stick, and how, when Congress votes every year and the White House can change hands?</td></tr>
+                </table>
+
+                <h3>Schedule (55 minutes)</h3>
+                <table>
+                    <tr><th>Time</th><th>Activity</th></tr>
+                    <tr><td>0:00 – 0:08</td><td>Briefing: how China plans (whole class)</td></tr>
+                    <tr><td>0:08 – 0:25</td><td><strong>Move 1:</strong> Write the plan (breakout rooms, 17 min)</td></tr>
+                    <tr><td>0:25 – 0:33</td><td>Report-out 1: each Reporter reads the plan (2 min per room)</td></tr>
+                    <tr><td>0:33 – 0:43</td><td><strong>Move 2:</strong> Year 3 review (breakout rooms, 10 min)</td></tr>
+                    <tr><td>0:43 – 0:49</td><td>Report-out 2: Keep, Bend, or Break? (2 min per room)</td></tr>
+                    <tr><td>0:49 – 0:55</td><td>Debrief (whole class)</td></tr>
+                </table>
+
+                <div class="warning-box">
+                    <strong>Ground rules.</strong> No dice, no points, no scoring. The instructor decides what happens to your plan, based on how well you defended it. A plan you cannot defend in two minutes is not a plan.
+                </div>
+            </div>
+
+            <!-- ===================== CHINA ===================== -->
+            <div id="china" class="tab-content">
+                <h2>How China Plans</h2>
+
+                <p>The People's Republic has issued Five-Year Plans since 1953. The current one, the <strong>15th Five-Year Plan (2026–2030)</strong>, was approved by the National People's Congress on March 12, 2026.</p>
+
+                <h3>How a Plan Gets Made</h3>
+                <ol>
+                    <li><strong>The Party sets direction.</strong> The Communist Party's Central Committee issues "Recommendations" (for the 15th Plan, in October 2025).</li>
+                    <li><strong>The planners write the Outline.</strong> The National Development and Reform Commission drafts a long document with goals and numerical targets.</li>
+                    <li><strong>The legislature approves it.</strong> The National People's Congress votes it through in March.</li>
+                    <li><strong>Everyone else writes a plan underneath it.</strong> The Outline sits on top of dozens of sector plans, provincial plans, and ministry plans. A province's plan for science must fit the national one.</li>
+                    <li><strong>Officials are judged against it.</strong> Meeting targets helps careers. Missing them hurts.</li>
+                </ol>
+
+                <h3>What the 15th Plan Says About Science</h3>
+                <ul>
+                    <li><strong>Self-reliance</strong> in science and technology is the headline goal, especially where China depends on foreign suppliers (chips are the obvious example).</li>
+                    <li><strong>Named frontier fields</strong> include quantum technology, 6G, fusion and hydrogen energy, biomanufacturing, brain-computer interfaces, and "embodied AI" (robots).</li>
+                    <li><strong>More basic research.</strong> China has said for two plans running that it wants a larger share of R&amp;D spending to go to basic research, a long-standing weakness.</li>
+                </ul>
+
+                <div class="info-box">
+                    <strong>Why it works (when it works):</strong> The same Party will be in charge in 2030 that wrote the plan in 2025. Targets reach every level of government. Money, people, and land can be pointed in one direction for years.
+                </div>
+
+                <div class="danger-box">
+                    <strong>Why it fails (when it fails):</strong> People hit the number instead of the goal. For years Chinese universities paid cash bonuses for papers in indexed journals; paper counts soared and so did low-quality and fraudulent work. In 2020 the government told universities to stop rewarding paper counts. A target is a promise that people will learn to game.
+                </div>
+
+                <h3>Does America Already Plan? Sort Of.</h3>
+                <table>
+                    <tr><th>American "plan"</th><th>What it is</th><th>What it lacks</th></tr>
+                    <tr><td>Vannevar Bush, <em>Science, the Endless Frontier</em> (1945)</td><td>The founding vision: fund basic research, let scientists choose</td><td>Targets. Bush argued against them.</td></tr>
+                    <tr><td>National Academies decadal surveys (astronomy, planetary science, others)</td><td>Scientists rank their own field's priorities for ten years</td><td>Money. Congress can ignore them.</td></tr>
+                    <tr><td>CHIPS and Science Act (2022)</td><td>A law that named key technology areas and authorized big increases for NSF</td><td>Appropriations. Much of the authorized money was never appropriated.</td></tr>
+                    <tr><td>Annual White House R&amp;D priorities memo</td><td>Tells agencies what to emphasize in their budget requests</td><td>Durability. It changes every year and with every President.</td></tr>
+                </table>
+            </div>
+
+            <!-- ===================== ROOMS ===================== -->
+            <div id="rooms" class="tab-content">
+                <h2>Rooms &amp; Roles</h2>
+
+                <p>There are three breakout rooms. Every room writes the same one-page plan. The difference is <strong>who created your Commission</strong>, which decides what power you have.</p>
+
+                <div class="role-card">
+                    <h3>Room A: The White House Commission</h3>
+                    <p><strong>Created by:</strong> Executive Order.</p>
+                    <p><strong>Your power:</strong> You can direct federal agencies (NSF, NIH, DOE, NASA) to reorganize their priorities. You can move fast.</p>
+                    <p><strong>Your weakness:</strong> You cannot appropriate a single dollar. An Executive Order can be cancelled by the next President with a signature.</p>
+                </div>
+
+                <div class="role-card">
+                    <h3>Room B: The Congressional Commission</h3>
+                    <p><strong>Created by:</strong> Statute, passed by both houses.</p>
+                    <p><strong>Your power:</strong> Your plan has the force of law and Congress holds the money.</p>
+                    <p><strong>Your weakness:</strong> 535 members, every one with a home district. Every priority will be asked: <em>which states get the money?</em> And next year's Congress can rewrite this year's law.</p>
+                </div>
+
+                <div class="role-card">
+                    <h3>Room C: The National Academies Commission</h3>
+                    <p><strong>Created by:</strong> The scientific community itself, like a decadal survey.</p>
+                    <p><strong>Your power:</strong> Legitimacy. Scientists trust you because you are them.</p>
+                    <p><strong>Your weakness:</strong> No legal authority and no money. Your plan is a recommendation. You must persuade people who do not have to listen.</p>
+                </div>
+
+                <h3>Roles Inside Every Room</h3>
+                <p>Fill these first. Everyone else is a Commissioner with a full vote.</p>
+                <table>
+                    <tr><th>Role</th><th>Job</th></tr>
+                    <tr><td><strong>Chair</strong></td><td>Runs the clock. Forces decisions. Breaks ties.</td></tr>
+                    <tr><td><strong>Scribe</strong></td><td>Writes the five boxes in the shared doc. If it is not written, it was not decided.</td></tr>
+                    <tr><td><strong>Reporter</strong></td><td>Reads the plan to the class in two minutes and answers one question.</td></tr>
+                    <tr><td><strong>The Appropriator</strong></td><td>Asks of every idea: <em>who pays, and what gets cut?</em></td></tr>
+                    <tr><td><strong>The Bench Scientist</strong></td><td>Asks of every idea: <em>would this plan have funded the last big surprise?</em> (Think CRISPR, which came from studying bacteria in yogurt cultures, or the GPS clocks that came from relativity.)</td></tr>
+                    <tr><td><strong>The Skeptic</strong></td><td>Argues that America should not have a plan at all, that central planning of science picks losers and kills curiosity. The room must answer the Skeptic before it finishes Box 5.</td></tr>
+                </table>
+            </div>
+
+            <!-- ===================== MOVE 1 ===================== -->
+            <div id="move1" class="tab-content">
+                <h2>Move 1: Write the Plan (17 minutes)</h2>
+
+                <div class="danger-box">
+                    <strong>JANUARY 2027.</strong> Your Commission meets for the first and only time before the plan is due. You have 17 minutes. Fill in all five boxes.
+                </div>
+
+                <div class="decision-point">
+                    <h3>Your Task</h3>
+                    <ol>
+                        <li><strong>The Goal.</strong> One sentence.</li>
+                        <li><strong>Three Priorities, ranked.</strong> Not five. Three. And #3 is the one you would sacrifice.</li>
+                        <li><strong>The Cut.</strong> Name a real program, field, or practice that shrinks. Be ready to say who will be angry.</li>
+                        <li><strong>The Target.</strong> One number, one date. Then ask: how would someone cheat to hit it?</li>
+                        <li><strong>The Enforcer.</strong> Given your room's power and weakness, who makes this stick until 2031?</li>
+                    </ol>
+                </div>
+
+                <div class="warning-box">
+                    <strong>Suggested pace:</strong> 3 min on the Goal, 5 min on Priorities, 3 min on the Cut, 3 min on the Target, 3 min on the Enforcer. If you are stuck on the Goal at minute 6, the Chair picks one.
+                </div>
+
+                <div class="info-box">
+                    <strong>What makes a plan strong:</strong> Priorities that actually exclude things. A Cut that hurts someone real. A Target that would be hard to fake. An Enforcer that matches your room's actual power.
+                </div>
+
+                <h3>Report-Out 1 (2 minutes per room)</h3>
+                <p>The Reporter reads the five boxes. The instructor asks <strong>one</strong> question. The class then hears from the next room. Listen carefully: in Move 2 you will learn what happened to your plan, and comparing it with the others is the point.</p>
+            </div>
+
+            <!-- ===================== MOVE 2 ===================== -->
+            <div id="move2" class="tab-content">
+                <h2>Move 2: The Year 3 Review (10 minutes)</h2>
+
+                <div class="danger-box">
+                    <strong>JANUARY 2029.</strong> Two years have passed. A new President has been inaugurated and Congress has turned over. Your Commission is called back for its mid-term review.
+                </div>
+
+                <h3>Every Room Receives This</h3>
+                <div class="classified-box">
+                    <strong>THE SURPRISE.</strong> The biggest scientific breakthrough of 2028 came from a field <strong>none of the three plans named as a priority</strong>. The lab that made it was funded by a small, unglamorous basic-research grant, the kind of grant that plans tend to shrink. Reporters are asking every Commission the same question: <em>"Would your plan have killed this?"</em>
+                </div>
+
+                <h3>Your Room Also Receives One of These</h3>
+
+                <div class="role-card">
+                    <h3>Room A (White House): Rescinded</h3>
+                    <p>On her first afternoon in office, the new President cancels the Executive Order that created your Commission. Agencies are told to "return to normal processes." Two agencies quietly keep following your plan anyway. Three stop immediately. Your plan now exists only where people <em>chose</em> to keep it.</p>
+                </div>
+
+                <div class="role-card">
+                    <h3>Room B (Congress): The Target Was Hit</h3>
+                    <p>Good news: your Target is on track. Bad news: the Government Accountability Office reports that most of the progress came from <strong>relabeling</strong> existing work to count toward the Target, not from new results. Members from states that won the money are delighted. Members from states that lost it want the law repealed.</p>
+                </div>
+
+                <div class="role-card">
+                    <h3>Room C (Academies): Applauded and Ignored</h3>
+                    <p>Your plan was praised in <em>Science</em> and <em>Nature</em>, cited in hundreds of papers, and followed by almost no one with money. Appropriators funded what they always fund. One foreign government, however, has adopted your priority list almost word for word.</p>
+                </div>
+
+                <div class="decision-point">
+                    <h3>Your Task</h3>
+                    <ol>
+                        <li><strong>Keep, Bend, or Break?</strong> Decide whether the plan survives as written, survives with changes, or should be abandoned.</li>
+                        <li><strong>Change exactly ONE box.</strong> You may rewrite only one of the five boxes. Choose carefully. Which box failed?</li>
+                        <li><strong>Answer the reporters.</strong> One sentence: would your plan have killed the 2028 breakthrough?</li>
+                        <li><strong>The verdict.</strong> One sentence: <em>"After Year 3, we believe America (can / cannot) plan science because..."</em></li>
+                    </ol>
+                </div>
+
+                <h3>Report-Out 2 (2 minutes per room)</h3>
+                <p>The Reporter states Keep, Bend, or Break, names the box you changed and why, and reads the verdict.</p>
+            </div>
+
+            <!-- ===================== DEBRIEF ===================== -->
+            <div id="debrief" class="tab-content">
+                <h2>Debrief</h2>
+
+                <div class="info-box">
+                    <strong>The core question:</strong> China's plan survives five years because the people who wrote it will still be in charge when it ends. What, if anything, plays that role in America?
+                </div>
+
+                <h3>Discussion Questions</h3>
+                <ul>
+                    <li><strong>Which box was hardest?</strong> Most rooms find the Cut hardest. Why is it so much easier to name priorities than to name what loses?</li>
+                    <li><strong>Power vs. legitimacy.</strong> Room A had speed, Room B had money and law, Room C had trust. Whose plan did best in Year 3? What does that tell you about where durable power over science sits in America?</li>
+                    <li><strong>Goodhart's problem.</strong> Every Target can be gamed. China learned this with paper counts. Did any room write a Target that could not be faked? Is that even possible in science?</li>
+                    <li><strong>The surprise.</strong> Would any plan have funded the 2028 breakthrough? If not, should a plan deliberately protect money for things nobody can plan?</li>
+                    <li><strong>The Skeptic's case.</strong> Vannevar Bush built the Miracle Machine on the idea that you fund good people and let them choose. Is a Five-Year Plan a betrayal of that idea, or the overdue next step?</li>
+                    <li><strong>The hidden plan.</strong> Decadal surveys, CHIPS and Science, the annual priorities memo. Does America already plan science, just badly? Or is a decentralized system its own kind of plan?</li>
+                </ul>
+
+                <div class="warning-box">
+                    <strong>One-line exit ticket:</strong> If you could make only one part of China's planning system American, which part would you take, and what would it cost?
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>The American Plan: A Five-Year Plan War Game | Fictional Scenario</p>
+            <p>Student Version</p>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.tab').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                document.querySelectorAll('.tab-content').forEach(function (c) { c.classList.remove('active'); });
+                document.querySelectorAll('.tab').forEach(function (t) { t.classList.remove('active'); });
+                document.getElementById(btn.getAttribute('data-tab')).classList.add('active');
+                btn.classList.add('active');
+                window.scrollTo(0, 0);
+            });
+        });
+    </script>
+</body>
+</html>
